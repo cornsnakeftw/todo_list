@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
                     borderSide:
-                        BorderSide(color: Colors.pinkAccent, width: 5.0),
+                        BorderSide(color: Colors.pinkAccent, width: 3.0),
                   ),
                   hintText: "Title",
                   border: OutlineInputBorder(),
@@ -66,6 +66,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: TextField(
                 controller: _textDescriptionController,
                 decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.pinkAccent, width: 3.0),
+                  ),
                   hintText: "Description",
                   border: OutlineInputBorder(),
                 ),
@@ -75,6 +79,9 @@ class _MyHomePageState extends State<MyHomePage> {
               shrinkWrap: true,
               itemCount: todoList.length,
               itemBuilder: (BuildContext context, int index) {
+                if (index.isOdd) {
+                  return Divider(color: Colors.pink);
+                }
                 return ListTile(
                   title: Text(
                     // ('Todo-${index+1}')
