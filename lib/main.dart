@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData.dark(
-      
-      ),
+      theme: ThemeData.dark(),
       home: const MyHomePage(title: 'TO-DO List'),
     );
   }
@@ -54,6 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: TextField(
                 controller: _textTitleController,
                 decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.pinkAccent, width: 5.0),
+                  ),
                   hintText: "Title",
                   border: OutlineInputBorder(),
                 ),
