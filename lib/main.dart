@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
               itemCount: todoList.length,
               itemBuilder: (BuildContext context, int index) {
                 if (index.isOdd) {
-                  return Divider(color: Colors.pink);
+                  return Divider(color: Colors.pinkAccent, thickness: 0.7);
                 }
                 return ListTile(
                   title: Text(
