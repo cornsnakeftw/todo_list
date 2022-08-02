@@ -44,8 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Column(
+// mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
+// color: Colors.red,
               padding: EdgeInsets.all(20),
               child: TextField(
                 controller: _textTitleController,
@@ -59,6 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               )),
           Container(
+// color: Colors.red,
               padding: EdgeInsets.all(20),
               child: TextField(
                 controller: _textDescriptionController,
@@ -76,26 +79,12 @@ class _MyHomePageState extends State<MyHomePage> {
               shrinkWrap: true,
               itemCount: todoList.length,
               itemBuilder: (BuildContext context, int index) {
-                final todo_Item = todoList[index];
-                return 
-                // Dismissible(
-                //   //to delete item
-                //   key: Key(todo_Item),
-                //   onDismissed: (horizontal) {
-                //     setState(() {
-                //       todoList.removeAt(index);
-                //     });
-
-                //     ScaffoldMessenger.of(cintext:Text('$todo_Item dismissed')));
-                //     },
-                //     background:Container(color: Colors.red),
-                //     child; ListTile(addAutomaticKeepAlives: title:,)
-                // );
                 if (index.isOdd) {
                   return Divider(color: Colors.pinkAccent, thickness: 0.7);
                 }
                 return ListTile(
                   title: Text(
+                    // ('Todo-${index+1}')
                     todoList[index].title ?? '',
                     style: TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.pink[400]),
